@@ -1,5 +1,5 @@
 package romilp.newsfreshapp.activities
-
+//kode diatas merupakan nama paket yang kita gunakan dalam folder activities.
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -15,7 +15,8 @@ import romilp.rickandmortyapiapp.api.ApiService
 import romilp.rickandmortyapiapp.databinding.ActivityMainBinding
 import romilp.rickandmortyapiapp.models.Result
 import romilp.rickandmortyapiapp.models.Character
-
+//kode diatas merupakan kumpulan paket atau library yang didalmnya terdapat berbagai fungsi
+//yang nantinya dapat digunakan sesuai fungsi yang dipanggil
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,7 +26,8 @@ class MainActivity : AppCompatActivity() {
     var pageNum = 1
     var totalResults = -1
     private var mTAG = "Romil"
-
+//kode diatas merupakan pendeklarasian suatu variable yang nantinya akan digunakan
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -43,7 +45,12 @@ class MainActivity : AppCompatActivity() {
             getList()
         }
     }
-
+    //kode diatas merupakan metode onCreate dari setiap Aktivitas Android.
+// Aktivitas memiliki kemampuan, dalam keadaan khusus,
+// untuk memulihkan dirinya sendiri ke keadaan sebelumnya
+// menggunakan data yang disimpan dalam bundel ini. dalam method ini kita juga
+// membuat data binding yang nantinya akan digunakan sebagai proses membangun koneksi antarmuka.
+  
     private fun layoutManager() {
 
         val linearLayoutManager = LinearLayoutManager(this)
@@ -66,6 +73,12 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
+//pada kode diatas merupakan suatu method yang dibuat untuk menampilkan tampilan recycle view.
+// RecyclerView adalah ViewGroup yang berisi tampilan yang sesuai dengan data Anda. 
+// ViewGroup sendiri juga merupakan tampilan, 
+// jadi Anda menambahkan RecyclerView ke tata letak dengan cara yang sama seperti 
+// menambahkan elemen UI lainnya. Setiap elemen individual dalam daftar ditentukan oleh 
+// objek pemegang tampilan
 
     private fun getList() {
         //Log.d(mTAG, "Request sent for $pageNum")
@@ -78,7 +91,7 @@ class MainActivity : AppCompatActivity() {
                     adapter.notifyDataSetChanged()
                 }
             }
-
+//dan perintah method fun getlist digunakan menampilkan onjek listnya.
             override fun onFailure(call: Call<Character>, t: Throwable) {
                 Log.d(mTAG, "Error", t)
             }
