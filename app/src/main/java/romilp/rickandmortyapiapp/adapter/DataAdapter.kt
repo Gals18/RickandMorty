@@ -23,6 +23,9 @@ class DataAdapter(private val context: Context, private val characterList: List<
         val view = LayoutInflater.from(context).inflate(R.layout.item_view, parent, false)
         return DataViewHolder(view)
     }
+//'onCreateViewHolder()' berfungsi untuk membuat objek ViewHolder.
+// Di method ini kita juga akan menentukan layout XML yang akan digunakan untuk setiap item.
+// 'onBindViewHolder()' berfungsi untuk menghubungkan data yang ada dengan objek ViewHolder.
 
     override fun onBindViewHolder(holder: DataViewHolder, position: Int) {
         holder.characterName.text = characterList[position].name
@@ -39,11 +42,11 @@ class DataAdapter(private val context: Context, private val characterList: List<
             context.startActivity(intent)
         }
     }
-
+//‘onBindViewHolder()’ berfungsi untuk menghubungkan data yang ada dengan objek ViewHolder.
     override fun getItemCount(): Int {
         return characterList.size
     }
-
+//method getItemCount() berfungsi untuk mengambil data list dari kelas character
     inner class DataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val characterImage: ImageView = itemView.findViewById(R.id.characterImage)
         val characterName: TextView = itemView.findViewById(R.id.characterName)
@@ -54,3 +57,6 @@ class DataAdapter(private val context: Context, private val characterList: List<
         val container = itemView.findViewById<ConstraintLayout>(R.id.cardContainer)
     }
 }
+//RecyclerView memudahkan untuk menampilkan kumpulan data
+// dalam jumlah besar secara efisien. Anda menyediakan data dan menentukan
+// tampilan setiap item, dan library RecyclerView secara dinamis membuat elemen saat diperlukan.
