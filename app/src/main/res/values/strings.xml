@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Rick and Morty Api app</string>
+    <string name="textforlocation">Last known location</string>
+    <string name="gender">Gender</string>
+</resources>
