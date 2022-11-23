@@ -30,7 +30,8 @@ interface ApiInterface {
         @Path("episode-id") episodeId: Int
     ): Call<Episode>
 }
-
+//API adalah singkatan dari Application Programming Interface.
+// API sendiri merupakan interface yang dapat menghubungkan satu aplikasi dengan aplikasi lainnya.
 object ApiService {
     val dataInstance: ApiInterface
 
@@ -42,3 +43,8 @@ object ApiService {
         dataInstance = retrofit.create(ApiInterface::class.java)
     }
 }
+//membuat suatu objek untuk server api. dalam kelas objek ini terdaat Retrofit,
+// Retrofit adalah library Rest Client untuk android dan java dari squareup.
+// hal ini membuatnya relatif mudah untuk mengambil dan
+// mengunggah JSON (atau struktur data lainnya) melalui webservice berbasis REST.
+// Di Retrofit Anda mengonfigurasi konverter mana yang digunakan untuk serialisasi data.
