@@ -19,3 +19,4 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
+<!--perintah diatas digunakan untuk membuat suatu tampilan recycle -->
